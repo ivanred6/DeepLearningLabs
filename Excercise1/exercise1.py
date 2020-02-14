@@ -52,7 +52,7 @@ if __name__ == '__main__':
     U, V = sgd_factorise(test, 2)
     loss = torch.nn.functional.mse_loss(U@V.t(), test, reduction='sum')
     print(f"Approximation {U@V.t()}")
-    print(f'Loss  is {loss}')
+    print(f'Loss  is {loss}')\
 
     U, S , V = truncatedSVD(test)
     reconstruction = U @ torch.diag(S) @ V.t()
